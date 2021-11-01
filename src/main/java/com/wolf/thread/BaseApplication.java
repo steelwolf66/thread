@@ -1,4 +1,4 @@
-package com.wolf.base;
+package com.wolf.thread;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
