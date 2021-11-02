@@ -1,4 +1,4 @@
-package com.wolf.thread.demo;
+package com.wolf.thread.demo.llist;
 
 import java.util.ArrayList;
 import java.util.List;
