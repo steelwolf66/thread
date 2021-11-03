@@ -1,4 +1,4 @@
-package com.wolf.thread.demo.llist;
+package com.wolf.thread.demo.list;
 
 import java.util.Arrays;
 import java.util.stream.Stream;
