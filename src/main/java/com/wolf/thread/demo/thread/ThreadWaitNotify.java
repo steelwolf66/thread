@@ -11,9 +11,6 @@ public class ThreadWaitNotify {
     private static User user = new User();
 
     public static void main(String[] args) throws InterruptedException {
-        ReentrantLock lock = new ReentrantLock();
-        lock.lock();
-
 
         Thread t1 = new Thread(() -> {
             try {

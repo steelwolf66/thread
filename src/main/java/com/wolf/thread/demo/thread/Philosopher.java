@@ -4,6 +4,8 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 public class Philosopher extends Thread {
+    private static Logger logger = LoggerFactory.getLogger(Philosopher.class);
+
     private Chopstick left;
     private Chopstick right;
 
@@ -13,16 +15,17 @@ public class Philosopher extends Thread {
         this.right = right;
     }
 
-    private static Logger logger = LoggerFactory.getLogger(Philosopher.class);
     @Override
     public void run() {
-        synchronized (left){
-            synchronized (right){
-                logger.info("eating");
-                try {
-                    Thread.sleep(100);
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
+        while (true) {
+            synchronized (left) {
+                synchronized (right) {
+                    logger.info("eating");
+                    try {
+                        Thread.sleep(100);
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
                 }
             }
         }

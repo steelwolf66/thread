@@ -7,13 +7,11 @@ public class PhilosopherDemo {
         Chopstick chopstick3 = new Chopstick("3");
         Chopstick chopstick4 = new Chopstick("4");
         Chopstick chopstick5 = new Chopstick("5");
-        while (true) {
-            new Philosopher("阿基米德", chopstick1, chopstick2).start();
-            new Philosopher("伽利略", chopstick3, chopstick4).start();
-            new Philosopher("华罗庚", chopstick2, chopstick3).start();
-            new Philosopher("焦耳", chopstick5, chopstick1).start();
-            new Philosopher("安培", chopstick4, chopstick5).start();
-            Thread.sleep(10);
-        }
+
+        new Philosopher("阿基米德", chopstick1, chopstick2).start();
+        new Philosopher("华罗庚", chopstick2, chopstick3).start();
+        new Philosopher("伽利略", chopstick3, chopstick4).start();
+        new Philosopher("安培", chopstick4, chopstick5).start();
+        new Philosopher("焦耳", chopstick1, chopstick5).start();
     }
 }
