@@ -4,8 +4,6 @@ import com.wolf.thread.entity.User;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import java.util.concurrent.locks.ReentrantLock;
-
 public class ThreadWaitNotify {
     private static Logger logger = LoggerFactory.getLogger(ThreadWaitNotify.class);
     private static User user = new User();

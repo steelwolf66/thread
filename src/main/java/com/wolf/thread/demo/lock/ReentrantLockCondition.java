@@ -24,7 +24,7 @@ public class ReentrantLockCondition {
         AtomicInteger loopNum = new AtomicInteger(1);
         new Thread(() -> {
             while (true) {
-                Sleeper.sleep(100);
+                Sleeper.sleep(1000);
                 lock.lock();
                 boolean isExcepted = atomicInteger.compareAndSet(0, 1);
 
@@ -45,7 +45,7 @@ public class ReentrantLockCondition {
 
         new Thread(() -> {
             while (true) {
-                Sleeper.sleep(100);
+                Sleeper.sleep(1000);
                 lock.lock();
                 boolean isExcepted = atomicInteger.compareAndSet(1, 2);
                 try {
@@ -56,6 +56,7 @@ public class ReentrantLockCondition {
                     }
                     logger.info("B:{}", loopNum);
                     conditionThi.signal();
+
                 } catch (InterruptedException e) {
 
                     logger.error("exception", e);
@@ -67,7 +68,7 @@ public class ReentrantLockCondition {
 
         new Thread(() -> {
             while (true) {
-                Sleeper.sleep(100);
+                Sleeper.sleep(1000);
                 lock.lock();
                 boolean isExcepted = atomicInteger.compareAndSet(2, 0);
                 try {
@@ -79,12 +80,12 @@ public class ReentrantLockCondition {
                     loopNum.getAndAdd(1);
                     logger.info("*****************************************");
                     conditionFir.signal();
-
                 } catch (InterruptedException e) {
 
                     logger.error("exception", e);
                 } finally {
                     lock.unlock();
+
                 }
             }
         }, "C").start();
