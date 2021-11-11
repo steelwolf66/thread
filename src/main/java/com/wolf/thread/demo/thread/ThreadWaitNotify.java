@@ -1,6 +1,6 @@
 package com.wolf.thread.demo.thread;
 
-import com.wolf.thread.entity.User;
+import com.wolf.thread.demo.entity.User;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

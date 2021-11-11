@@ -1,4 +1,4 @@
-package com.wolf.thread.entity;
+package com.wolf.thread.demo.entity;
 
 import lombok.Data;
 
